@@ -24,14 +24,16 @@ namespace CalculadoraIMC
 
         private void btnCalcular_Click(object sender, EventArgs e)
         {
+            // Obter os números do form
             double peso, alt, imc;
             peso = double.Parse(txbPeso.Text);
             alt = double.Parse(txbAltura.Text);
+            // Calcular o IMC
             alt = Math.Pow(alt, 2);
             imc = Math.Round(peso / alt);
 
             txbResultado.Text = imc.ToString();
-
+            // Classificar com base no IMC 
             if(imc < 18.5)
             {
                 lblClassificação.Text = "abaixo do peso";
